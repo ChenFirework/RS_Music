@@ -40,14 +40,14 @@ server.use(session({
 server.use(express.static("public"))
 //7:创建express对象绑定4000端口
 server.listen(4000);
-/*
+
 //8:功能一:完成用户登录
 server.get("/login",(req,res)=>{
 //(1)获取脚手架参数 uname upwd
 var uname = req.query.uname;
 var upwd = req.query.upwd;
 //(2)创建sql语句查询
-var sql = "SELECT id FROM xz_login WHERE uname = ? AND upwd = md5(?)";
+var sql = "SELECT uid FROM rs_user WHERE uname = ? AND upwd = md5(?)";
 //(3)执行sql语句
 pool.query(sql,[uname,upwd],(err,result)=>{
  if(err)throw err;
@@ -63,8 +63,8 @@ pool.query(sql,[uname,upwd],(err,result)=>{
  //(6)将结果返回脚手架
 })
 })
-*/
 
+/*
 //功能二:分页显示商品列表
 //1:接收GET /product 
 server.get("/product",(req,res)=>{
@@ -92,7 +92,7 @@ server.get("/product",(req,res)=>{
   //启动 node app.js
   //http://127.0.0.1:4000/product
   //http://127.0.0.1:4000/product?pno=2
-  /*
+  
 //ALTER TABLE xz_cart ADD uid INT;
 //功能三:将商品添加至购物车
 //1:接收请求 GET /addcart
