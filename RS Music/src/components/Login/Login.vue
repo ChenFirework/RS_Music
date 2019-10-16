@@ -15,7 +15,7 @@ export default {
     },
     methods:{
         login(){
-            var reg=/^\w{3,12}$/i;
+            var reg=/^\w{1,12}$/i;
             if(reg.test(this.uname) && reg.test(this.upwd)){
                 this.axios.get("login",{
                     params:{
@@ -23,7 +23,7 @@ export default {
                         upwd:this.upwd
                     }
                 }).then(response=>{
-                    console.log(0);
+                    console.log(response);
                     if(response.data.code==1){
                         console.log(1)
                     }else{

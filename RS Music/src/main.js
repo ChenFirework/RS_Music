@@ -4,6 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//引入axios模块
+import axios from "axios"
+//6.配置服务器基础路径
+axios.defaults.baseURL="http://127.0.0.1:4000/"
+//7.配置保存session信息
+axios.defaults.withCredentials=true
+//8.axios 注册vue
+Vue.prototype.axios=axios;
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

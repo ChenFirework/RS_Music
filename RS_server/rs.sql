@@ -27,7 +27,7 @@ CREATE TABLE rs_music(
   murl VARCHAR(64),
   mhot VARCHAR(16),
   morigin VARCHAR(64)
-)
+);
 
 /**添加歌曲**/
 INSERT INTO rs_music VALUES(null,'小幸运','田馥甄','01.png','246%','《我的少女时代》电影主题曲');
