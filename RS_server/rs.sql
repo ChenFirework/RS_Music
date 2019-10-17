@@ -14,10 +14,10 @@ CREATE TABLE rs_user(
 );
 
 /**添加用户**/
-INSERT INTO rs_user VALUES(null,'小明',md5('123456'),'xiaoming@163.com','18212345678',1);
-INSERT INTO rs_user VALUES(null,'小红',md5('123456'),'xiaohong@163.com','18312345678',0);
-INSERT INTO rs_user VALUES(null,'小张',md5('123456'),'xiaozhang@163.com','18412345678',1);
-INSERT INTO rs_user VALUES(null,'小李',md5('123456'),'xiaoli@163.com','18512345678',1);
+INSERT INTO rs_user VALUES(null,'xiaoming',md5('123456'),'xiaoming@163.com','18212345678',1);
+INSERT INTO rs_user VALUES(null,'xiaohong',md5('123456'),'xiaohong@163.com','18312345678',0);
+INSERT INTO rs_user VALUES(null,'xiaozhang',md5('123456'),'xiaozhang@163.com','18412345678',1);
+INSERT INTO rs_user VALUES(null,'xiaoli',md5('123456'),'xiaoli@163.com','18512345678',1);
 
 /**歌曲列表**/
 CREATE TABLE rs_music(

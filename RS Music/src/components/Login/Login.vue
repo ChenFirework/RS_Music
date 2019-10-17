@@ -4,7 +4,7 @@
       <button id="displaysign" @click="start()">点击登录</button>
     </div>
     <div class="reg">
-      <div>
+      <div class="head_title">
         <img class="logo" src="../../assets/logo.png" alt />
         <span class="rs_title">RS Music</span>
       </div>
@@ -24,8 +24,9 @@
           <el-link type="primary" href="https://element.eleme.io" target="_blank">注册账号</el-link>
         </div>
         <!-- 登录 -->
-        <div>
+        <div class="immediately">
           <el-button class="btn" type="primary" @click="login">立即登录</el-button>
+          <el-checkbox v-model="agree">我已阅读并同意相关服务条款和隐私政策</el-checkbox>
         </div>
         <el-divider>第三方登录</el-divider>
         <div class="items">
@@ -45,13 +46,13 @@ export default {
     return {
       uname: "",
       upwd: "",
-      checked: false
+      checked: false,
+      agree:true
     };
   },
   methods: {
+    start(){},
     login() {
-      var reg = /^\w{1,12}$/i;
-      if (reg.test(this.uname) && reg.test(this.upwd)) {
         this.axios
           .get("login", {
             params: {
@@ -67,25 +68,18 @@ export default {
               console.log("-1");
             }
           });
-      } else {
-        console.log("消息", "用户名或密码错误");
-        return;
-      }
     }
   }
 };
 </script>
 <style scoped>
-.el-input__inner {
-  width: 50% !important;
-}
-.container {
-  text-align: center;
+span{
+  font-size: 14px;
 }
 .reg {
   width: 350px;
   height: 450px;
-  padding: 20px;
+  padding: 25px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -93,15 +87,30 @@ export default {
   margin-top: -225px;
   border: 1px solid #ddd;
 }
+.head_title{
+  display: flex;
+  justify-content: center;
+}
 .logo {
-  width: 50px;
+  width: 60px;
 }
 .rs_title {
-  font-size: 50px;
+  font-size: 45px;
   font-family: Lucida Handwriting;
 }
-.form > div {
+.input_uname,
+.input_upwd,
+.immediately {
   margin-bottom: 30px;
+}
+.tips{
+  height: 20px;
+}
+.hide {
+  display: none;
+}
+.err_size{
+  width: 14px;
 }
 .btn {
   width: 350px;
@@ -111,8 +120,9 @@ export default {
 .auto_login {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
-.items{
+.items {
   display: flex;
   justify-content: space-around;
 }
