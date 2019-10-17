@@ -3,7 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+//引入element-ui 组件
+import {Button} from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
+Vue.use(Button);
 //引入axios模块
 import axios from "axios"
 //6.配置服务器基础路径
