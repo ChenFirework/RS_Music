@@ -21,7 +21,7 @@
         <!-- 自动登录 -->
         <div class="auto_login">
           <el-checkbox v-model="checked">自动登录</el-checkbox>
-          <el-link type="primary" href="https://element.eleme.io" target="_blank">注册账号</el-link>
+          <el-link type="primary" href="javascript:;">注册账号</el-link>
         </div>
         <!-- 登录 -->
         <div class="immediately">
@@ -80,7 +80,9 @@ span{
   width: 350px;
   height: 450px;
   padding: 25px;
+  background-color: #fff;
   position: absolute;
+  z-index: 20;
   left: 50%;
   top: 50%;
   margin-left: -175px;
@@ -146,7 +148,7 @@ span{
 }
 /* 遮罩层样式 */
 .cover {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100%;
   position: absolute;
