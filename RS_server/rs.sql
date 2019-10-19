@@ -6,7 +6,7 @@ USE rs;
 /**用户注册**/
 CREATE TABLE rs_user(
   uid INT PRIMARY KEY AUTO_INCREMENT,
-  uname VARCHAR(32),
+  uname VARCHAR(32) UNIQUE,
   upwd VARCHAR(32),
   email VARCHAR(64),
   phone VARCHAR(11),

@@ -65,12 +65,11 @@ pool.query(sql,[uname,upwd],(err,result)=>{
   //(7)将结果返回脚手架
    res.send({code:1,msg:"登录成功"})
  }
- 
 })
 })
 //9:功能二:用户注册
 server.post('/register',function(req,res){
-	var obj=req.body;
+  var obj=req.body;
 	var i=400;
 	for (var key in obj)
 	{
@@ -79,11 +78,12 @@ server.post('/register',function(req,res){
 			res.send({code:i,msg:key+' required'});
 			return;
 		}
-	}
+  }
 	pool.query('INSERT INTO rs_user SET ?',[obj],function(err,result){
-    if(err) throw err;
-    if(result.affectedRows>0){
-      res.send({code:200,msg:'register suc'});
+    if(err){
+      res.send({code:401,msg:'用户名不能重复'});
+    }else if(result.affectedRows>0){
+      res.send({code:200,msg:'注册成功'});
     }
 	});
 });

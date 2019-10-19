@@ -8,7 +8,6 @@
         <img class="logo" src="../../assets/logo.png" alt />
         <span class="rs_title">RS Music</span>
       </div>
-      <br />
       <div class="form">
         <!-- 用户名 -->
         <div class="input_uname">
@@ -86,12 +85,13 @@ span{
   left: 50%;
   top: 50%;
   margin-left: -175px;
-  margin-top: -225px;
+  margin-top: -250px;
   border: 1px solid #ddd;
 }
 .head_title{
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 }
 .logo {
   width: 60px;
