@@ -1,125 +1,125 @@
 <template>
   <div class="container">
-    <div>
-      <button id="displaysign" @click="start()">点击登录</button>
-    </div>
-    <div class="reg">
-      <!-- logo标题 -->
-      <div class="head_title">
-        <img class="logo" src="../../assets/logo.png" alt />
-        <span class="rs_title">RS Music</span>
+    <div class="all">
+      <div class="reg">
+        <!-- logo标题 -->
+        <div class="head_title">
+          <img class="logo" src="../../assets/logo.png" alt />
+          <span class="rs_title">RS Music</span>
+          <span @click="close" class="el-icon-close"></span>
+        </div>
+        <div class="form">
+          <!-- 返回登录 -->
+          <div class="back_login">
+            <span>已有账号?</span>
+            <el-link type="primary" href="javascript:;">立即登录</el-link>
+          </div>
+          <!-- 用户名 -->
+          <div class="input_uname">
+            <div>
+              <el-input
+                class="el_input_uname"
+                prefix-icon="el-icon-user"
+                v-model="uname"
+                placeholder="请输入用户名"
+                @focus="focusTestUname"
+                @blur="blurTestUname"
+                clearable
+              ></el-input>
+            </div>
+            <div class="tips">
+              <div class="hide">
+                <span class="el-icon-message-solid">用户名可以是3~16位的字母、数字、下划线</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-warning">用户名格式不正确</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-success">用户名格式正确</span>
+              </div>
+            </div>
+          </div>
+          <!-- 密码 -->
+          <div class="input_upwd">
+            <div>
+              <el-input
+                class="el_input_email"
+                prefix-icon="el-icon-lock"
+                v-model="upwd"
+                placeholder="请输入密码"
+                @focus="focusTestUpwd"
+                @blur="blurTestUpwd"
+                show-password
+              ></el-input>
+            </div>
+            <div class="tips">
+              <div class="hide">
+                <span class="el-icon-message-solid">密码至少包含1个大写字母,1个小写字母和1个数字</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-warning">密码格式不正确</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-success">密码格式正确</span>
+              </div>
+            </div>
+          </div>
+          <!-- 邮箱 -->
+          <div class="input_email">
+            <div>
+              <el-input
+                prefix-icon="el-icon-message"
+                @blur="blurTestEmail"
+                v-model="email"
+                placeholder="请输入邮箱"
+                clearable
+              ></el-input>
+            </div>
+            <div class="tips">
+              <div class="hide">
+                <span class="el-icon-warning">邮箱格式不正确</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-success">邮箱格式正确</span>
+              </div>
+            </div>
+          </div>
+          <!-- 手机号 -->
+          <div class="input_phone">
+            <div>
+              <el-input
+                prefix-icon="el-icon-mobile-phone"
+                @blur="blurTestPhone"
+                v-model="phone"
+                placeholder="请输入手机号"
+                clearable
+              ></el-input>
+            </div>
+            <div class="tips">
+              <div class="hide">
+                <span class="el-icon-warning">手机号格式不正确</span>
+              </div>
+              <div class="hide">
+                <span class="el-icon-success">手机号格式正确</span>
+              </div>
+            </div>
+          </div>
+          <!-- 性别 -->
+          <div class="input_gender">
+            <span>性别：</span>
+            <el-radio v-model="gender" label="1">男</el-radio>
+            <el-radio v-model="gender" label="0">女</el-radio>
+          </div>
+          <!-- 注册 -->
+          <div class="immediately">
+            <el-button class="btn" type="primary" @click="register">立即注册</el-button>
+            <el-checkbox v-model="agree">我已阅读并同意相关服务条款和隐私政策</el-checkbox>
+          </div>
+        </div>
       </div>
-      <div class="form">
-        <!-- 返回登录 -->
-        <div class="back_login">
-          <span>已有账号?</span>
-          <el-link type="primary" href="javascript:;">立即登录</el-link>
-        </div>
-        <!-- 用户名 -->
-        <div class="input_uname">
-          <div>
-            <el-input
-              class="el_input_uname"
-              prefix-icon="el-icon-user"
-              v-model="uname"
-              placeholder="请输入用户名"
-              @focus="focusTestUname"
-              @blur="blurTestUname"
-              clearable
-            ></el-input>
-          </div>
-          <div class="tips">
-            <div class="hide">
-              <span class="el-icon-message-solid">用户名可以是3~16位的字母、数字、下划线</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-warning">用户名格式不正确</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-success">用户名格式正确</span>
-            </div>
-          </div>
-        </div>
-        <!-- 密码 -->
-        <div class="input_upwd">
-          <div>
-            <el-input
-              class="el_input_email"
-              prefix-icon="el-icon-lock"
-              v-model="upwd"
-              placeholder="请输入密码"
-              @focus="focusTestUpwd"
-              @blur="blurTestUpwd"
-              show-password
-            ></el-input>
-          </div>
-          <div class="tips">
-            <div class="hide">
-              <span class="el-icon-message-solid">密码至少包含1个大写字母,1个小写字母和1个数字</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-warning">密码格式不正确</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-success">密码格式正确</span>
-            </div>
-          </div>
-        </div>
-        <!-- 邮箱 -->
-        <div class="input_email">
-          <div>
-            <el-input
-              prefix-icon="el-icon-message"
-              @blur="blurTestEmail"
-              v-model="email"
-              placeholder="请输入邮箱"
-              clearable
-            ></el-input>
-          </div>
-          <div class="tips">
-            <div class="hide">
-              <span class="el-icon-warning">邮箱格式不正确</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-success">邮箱格式正确</span>
-            </div>
-          </div>
-        </div>
-        <!-- 手机号 -->
-        <div class="input_phone">
-          <div>
-            <el-input
-              prefix-icon="el-icon-mobile-phone"
-              @blur="blurTestPhone"
-              v-model="phone"
-              placeholder="请输入手机号"
-              clearable
-            ></el-input>
-          </div>
-          <div class="tips">
-            <div class="hide">
-              <span class="el-icon-warning">手机号格式不正确</span>
-            </div>
-            <div class="hide">
-              <span class="el-icon-success">手机号格式正确</span>
-            </div>
-          </div>
-        </div>
-        <!-- 性别 -->
-        <div class="input_gender">
-          <span>性别：</span>
-          <el-radio v-model="gender" label="1">男</el-radio>
-          <el-radio v-model="gender" label="0">女</el-radio>
-        </div>
-        <!-- 注册 -->
-        <div class="immediately">
-          <el-button class="btn" type="primary" @click="register">立即注册</el-button>
-          <el-checkbox v-model="agree">我已阅读并同意相关服务条款和隐私政策</el-checkbox>
-        </div>
-      </div>
+      <!-- 遮罩层 -->
+      <div class="cover"></div>
     </div>
-    <!-- 遮罩层 -->
-    <div class="cover"></div>
   </div>
 </template>
 <script>
@@ -136,7 +136,6 @@ export default {
     };
   },
   methods: {
-    start() {},
     focusTestUname() {
       var tips = document.querySelector(".input_uname>.tips>div:first-child");
       tips.className = "";
@@ -193,6 +192,10 @@ export default {
         tips[1].className = "hide";
       }
     },
+    close() {
+      var closeLogin = document.querySelector(".all");
+      closeLogin.style.display = "none";
+    },
     register() {
       console.log(this.gender, this.agree);
       if (this.gender == "" || this.agree == false) {
@@ -237,6 +240,15 @@ span {
 .head_title {
   display: flex;
   justify-content: center;
+}
+.head_title > span:last-child {
+  position: absolute;
+  left: 375px;
+  top: 5px;
+  font-size: 20px;
+}
+.head_title > span:last-child:hover {
+  color: #ff0000;
 }
 .back_login {
   text-align: right;

@@ -1,42 +1,43 @@
 <template>
   <div class="container">
-    <div>
-      <button id="displaysign" @click="start()">点击登录</button>
-    </div>
-    <div class="reg">
-      <div class="head_title">
-        <img class="logo" src="../../assets/logo.png" alt />
-        <span class="rs_title">RS Music</span>
+    <div class="all">
+      <div class="reg">
+        <!-- logo标题 -->
+        <div class="head_title">
+          <img class="logo" src="../../assets/logo.png" alt />
+          <span class="rs_title">RS Music</span>
+          <span class="el-icon-close" @click="close"></span>
+        </div>
+        <div class="form">
+          <!-- 用户名 -->
+          <div class="input_uname">
+            <el-input prefix-icon="el-icon-user" v-model="uname" placeholder="请输入用户名" clearable></el-input>
+          </div>
+          <!-- 密码 -->
+          <div class="input_upwd">
+            <el-input prefix-icon="el-icon-lock" v-model="upwd" placeholder="请输入密码" show-password></el-input>
+          </div>
+          <!-- 自动登录 -->
+          <div class="auto_login">
+            <el-checkbox v-model="checked">自动登录</el-checkbox>
+            <el-link type="primary" href="javascript:;">注册账号</el-link>
+          </div>
+          <!-- 登录 -->
+          <div class="immediately">
+            <el-button class="btn" type="primary" @click="login">立即登录</el-button>
+            <el-checkbox v-model="agree">我已阅读并同意相关服务条款和隐私政策</el-checkbox>
+          </div>
+          <el-divider>第三方登录</el-divider>
+          <div class="items">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+          </div>
+        </div>
       </div>
-      <div class="form">
-        <!-- 用户名 -->
-        <div class="input_uname">
-          <el-input prefix-icon="el-icon-user" v-model="uname" placeholder="请输入用户名" clearable></el-input>
-        </div>
-        <!-- 密码 -->
-        <div class="input_upwd">
-          <el-input prefix-icon="el-icon-lock" v-model="upwd" placeholder="请输入密码" show-password></el-input>
-        </div>
-        <!-- 自动登录 -->
-        <div class="auto_login">
-          <el-checkbox v-model="checked">自动登录</el-checkbox>
-          <el-link type="primary" href="javascript:;">注册账号</el-link>
-        </div>
-        <!-- 登录 -->
-        <div class="immediately">
-          <el-button class="btn" type="primary" @click="login">立即登录</el-button>
-          <el-checkbox v-model="agree">我已阅读并同意相关服务条款和隐私政策</el-checkbox>
-        </div>
-        <el-divider>第三方登录</el-divider>
-        <div class="items">
-          <div class="item1"></div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-        </div>
-      </div>
+      <!-- 遮罩层 -->
+      <div class="cover"></div>
     </div>
-    <!-- 遮罩层 -->
-    <div class="cover"></div>
   </div>
 </template>
 <script>
@@ -46,33 +47,36 @@ export default {
       uname: "",
       upwd: "",
       checked: false,
-      agree:true
+      agree: true
     };
   },
   methods: {
-    start(){},
+    close() {
+      var closeLogin = document.querySelector(".all");
+      closeLogin.style.display = "none";
+    },
     login() {
-        this.axios
-          .get("login", {
-            params: {
-              uname: this.uname,
-              upwd: this.upwd
-            }
-          })
-          .then(response => {
-            console.log(response);
-            if (response.data.code == 1) {
-              console.log(1);
-            } else {
-              console.log("-1");
-            }
-          });
+      this.axios
+        .get("login", {
+          params: {
+            uname: this.uname,
+            upwd: this.upwd
+          }
+        })
+        .then(response => {
+          console.log(response);
+          if (response.data.code == 1) {
+            console.log(1);
+          } else {
+            console.log("-1");
+          }
+        });
     }
   }
 };
 </script>
 <style scoped>
-span{
+span {
   font-size: 14px;
 }
 .reg {
@@ -88,10 +92,19 @@ span{
   margin-top: -250px;
   border: 1px solid #ddd;
 }
-.head_title{
+.head_title {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+}
+.head_title > span:last-child {
+  position: absolute;
+  left: 375px;
+  top: 5px;
+  font-size: 20px;
+}
+.head_title > span:last-child:hover {
+  color: #ff0000;
 }
 .logo {
   width: 60px;
@@ -105,13 +118,13 @@ span{
 .immediately {
   margin-bottom: 30px;
 }
-.tips{
+.tips {
   height: 20px;
 }
 .hide {
   display: none;
 }
-.err_size{
+.err_size {
   width: 14px;
 }
 .btn {

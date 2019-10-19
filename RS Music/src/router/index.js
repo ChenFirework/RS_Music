@@ -5,14 +5,20 @@ import Login from '../components/Login/Login.vue'
 import Register from '../components/Register/Register.vue'
 import Navigation from '../components/Navigation/Navigation.vue'
 import Ranking from '../components/Ranking/Ranking.vue'
+import Home from '../components/Home/Home.vue'
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'app',
-      component: App
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     {
       path: '/login',
