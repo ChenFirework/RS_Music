@@ -123,15 +123,19 @@ export default {
 };
 </script>
 <style scoped>
+.container{
+  padding:50px 0;
+  background-color: #eee;
+}
 .allSheets {
   height: 350px;
   display: flex;
   justify-content: center;
 }
-.sheets {
+.sheets:not(:last-child) {
   width: 224px;
   height: 310px;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 .sheets .img_div {
   width: 224px;

@@ -10,6 +10,8 @@ import Home from '../components/Home/Home.vue'
 import Footer from '../components/Footer/Footer.vue'
 import Carousel from '../components/Carousel/Carousel.vue'
 import Songsheet from  '../components/Songsheet/Songsheet.vue'
+import Newsong from '../components/Newsong/Newsong.vue'
+import Singers from '../components/Singers/Singers.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -63,7 +65,16 @@ export default new Router({
       path: '/songsheet',
       name: 'songsheet',
       component: Songsheet
+    },
+    {
+      path: '/newsong',
+      name: 'newsong',
+      component: Newsong
+    },
+    {
+      path: '/singers',
+      name: 'singers',
+      component: Singers
     }
-    
   ]
 })

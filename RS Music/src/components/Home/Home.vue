@@ -6,7 +6,9 @@
     <register ref="regs"></register>
     <carousel></carousel>
     <songsheet></songsheet>
+    <newsong></newsong>
     <rank></rank>
+    <singers></singers>
   </div>
 </template>
 <script>
@@ -15,6 +17,8 @@ import Register from "../Register/Register.vue";
 import Carousel from "../Carousel/Carousel.vue";
 import Songsheet from "../Songsheet/Songsheet.vue";
 import Rank from "../Rank/Rank.vue"
+import Newsong from "../Newsong/Newsong.vue"
+import Singers from "../Singers/Singers.vue"
 export default {
   data() {
     return {};
@@ -32,7 +36,9 @@ export default {
     register: Register,
     carousel: Carousel,
     rank: Rank,
-    songsheet:Songsheet
+    songsheet:Songsheet,
+    newsong:Newsong,
+    singers:Singers
   }
 };
 </script>
