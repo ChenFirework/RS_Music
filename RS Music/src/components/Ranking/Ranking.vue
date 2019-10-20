@@ -11,9 +11,9 @@
           <el-menu-item index="1-2">热歌榜</el-menu-item>
         </el-menu-item-group>
           <el-menu-item index="1-3">飙升榜</el-menu-item>
-        </el-menu-item-group>
+
          <el-menu-item index="1-4">MV榜</el-menu-item>
-        </el-submenu>
+
       </el-submenu>
       <el-submenu index="2">
         <template slot="title"><i class="el-icon-headset"></i>地区榜</template>
@@ -22,11 +22,11 @@
           <el-menu-item index="2-2">香港地区榜</el-menu-item>
         </el-menu-item-group>
           <el-menu-item index="2-3">台湾地区榜</el-menu-item>
-        </el-menu-item-group>
+
           <el-menu-item index="2-4">欧美榜</el-menu-item>
           <el-menu-item index="2-5">韩国榜</el-menu-item>
           <el-menu-item index="2-6">日本榜</el-menu-item>
-        </el-submenu>
+
       </el-submenu>
       <el-submenu index="3">
         <template slot="title"><i class="el-icon-headset"></i>特色榜</template>
@@ -35,7 +35,7 @@
           <el-menu-item index="3-2">网络歌曲榜</el-menu-item>
         </el-menu-item-group>
           <el-menu-item index="3-3">电音榜</el-menu-item>
-        </el-menu-item-group>
+
           <el-menu-item index="3-5">ACG新歌榜</el-menu-item>
           <el-menu-item index="3-6">国风热歌榜</el-menu-item>
           <el-menu-item index="3-7">综艺新歌榜</el-menu-item>
@@ -51,14 +51,14 @@
           <el-menu-item index="4-2">美国iTunes榜</el-menu-item>
         </el-menu-item-group>
           <el-menu-item index="4-3">韩国Melon榜</el-menu-item>
-        </el-menu-item-group>
+
           <el-menu-item index="4-5">英国UK榜</el-menu-item>
           <el-menu-item index="4-6">日本公信榜</el-menu-item>
           <el-menu-item index="4-7">JOOX本地热播榜</el-menu-item>
           <el-menu-item index="4-8">香港商台榜</el-menu-item>
           <el-menu-item index="4-9">台湾KKBOX榜</el-menu-item>
           <el-menu-item index="4-10">YouTube音乐排行榜</el-menu-item>
-           </el-submenu>
+
       </el-submenu>
     </el-menu>
   </el-aside>

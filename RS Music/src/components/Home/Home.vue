@@ -4,11 +4,17 @@
     <login ref="logs"></login>
     <button @click="alertRegister">注册</button>
     <register ref="regs"></register>
+    <carousel></carousel>
+    <songsheet></songsheet>
+    <rank></rank>
   </div>
 </template>
 <script>
 import Login from "../Login/Login.vue";
 import Register from "../Register/Register.vue";
+import Carousel from "../Carousel/Carousel.vue";
+import Songsheet from "../Songsheet/Songsheet.vue";
+import Rank from "../Rank/Rank.vue"
 export default {
   data() {
     return {};
@@ -23,7 +29,10 @@ export default {
   },
   components: {
     login: Login,
-    register: Register
+    register: Register,
+    carousel: Carousel,
+    rank: Rank,
+    songsheet:Songsheet
   }
 };
 </script>

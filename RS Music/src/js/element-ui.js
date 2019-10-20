@@ -20,3 +20,9 @@ Vue.use(Container);
 Vue.use(Menu);
 Vue.use(Submenu);
 Vue.use(MenuItem);
+//轮播图
+import {Carousel,CarouselItem,Tabs,TabPane} from 'element-ui';
+Vue.use(Carousel);
+Vue.use(CarouselItem);
+Vue.use(Tabs);
+Vue.use(TabPane);

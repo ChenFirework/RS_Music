@@ -5,7 +5,11 @@ import Login from '../components/Login/Login.vue'
 import Register from '../components/Register/Register.vue'
 import Navigation from '../components/Navigation/Navigation.vue'
 import Ranking from '../components/Ranking/Ranking.vue'
+import Rank from '../components/Rank/Rank.vue'
 import Home from '../components/Home/Home.vue'
+import Footer from '../components/Footer/Footer.vue'
+import Carousel from '../components/Carousel/Carousel.vue'
+import Songsheet from  '../components/Songsheet/Songsheet.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -39,6 +43,27 @@ export default new Router({
       path: '/ranking',
       name: 'ranking',
       component: Ranking
+    },
+    {
+      path: '/rank',
+      name: 'rank',
+      component: Rank
+    },
+    {
+      path: '/footer',
+      name: 'footer',
+      component: Footer
+    },
+    {
+      path: '/carousel',
+      name: 'carousel',
+      component: Carousel
+    },
+    {
+      path: '/songsheet',
+      name: 'songsheet',
+      component: Songsheet
     }
+    
   ]
 })
