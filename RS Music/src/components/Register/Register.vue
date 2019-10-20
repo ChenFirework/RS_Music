@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <div class="all">
+    <div class="regAll">
       <div class="reg">
         <!-- logo标题 -->
         <div class="head_title">
           <img class="logo" src="../../assets/logo.png" alt />
           <span class="rs_title">RS Music</span>
-          <span @click="close" class="el-icon-close"></span>
+          <span @click="closeReg" class="el-icon-close"></span>
         </div>
         <div class="form">
           <!-- 返回登录 -->
           <div class="back_login">
             <span>已有账号?</span>
-            <el-link type="primary" href="javascript:;">立即登录</el-link>
+            <el-link type="primary" href="javascript:;" :underline="false">立即登录</el-link>
           </div>
           <!-- 用户名 -->
           <div class="input_uname">
@@ -136,6 +136,14 @@ export default {
     };
   },
   methods: {
+    showReg() {
+      var showRegister = document.querySelector(".regAll");
+      showRegister.style.display = "block";
+    },
+    closeReg() {
+      var closeRegister = document.querySelector(".regAll");
+      closeRegister.style.display = "none";
+    },
     focusTestUname() {
       var tips = document.querySelector(".input_uname>.tips>div:first-child");
       tips.className = "";
@@ -192,12 +200,7 @@ export default {
         tips[1].className = "hide";
       }
     },
-    close() {
-      var closeLogin = document.querySelector(".all");
-      closeLogin.style.display = "none";
-    },
     register() {
-      console.log(this.gender, this.agree);
       if (this.gender == "" || this.agree == false) {
         return;
       } else {
@@ -213,7 +216,12 @@ export default {
           "&gender=" +
           this.gender;
         this.axios.post("register", str).then(response => {
-          console.log(response);
+          if(response.data.code==200){
+            alert("注册成功!");
+            this.closeReg();
+          }else{
+            alert("此用户名已被注册！");
+          }
         });
       }
     }
@@ -223,6 +231,9 @@ export default {
 <style scoped>
 span {
   font-size: 14px;
+}
+.regAll {
+  display: none;
 }
 .reg {
   width: 350px;

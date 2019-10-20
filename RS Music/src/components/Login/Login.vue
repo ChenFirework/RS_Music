@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div class="all">
+    <div class="logAll">
       <div class="reg">
         <!-- logo标题 -->
         <div class="head_title">
           <img class="logo" src="../../assets/logo.png" alt />
           <span class="rs_title">RS Music</span>
-          <span class="el-icon-close" @click="close"></span>
+          <span class="el-icon-close" @click="closeLog"></span>
         </div>
         <div class="form">
           <!-- 用户名 -->
@@ -20,7 +20,7 @@
           <!-- 自动登录 -->
           <div class="auto_login">
             <el-checkbox v-model="checked">自动登录</el-checkbox>
-            <el-link type="primary" href="javascript:;">注册账号</el-link>
+            <el-link type="primary" href="javascript:;" :underline="false">注册账号</el-link>
           </div>
           <!-- 登录 -->
           <div class="immediately">
@@ -51,8 +51,12 @@ export default {
     };
   },
   methods: {
-    close() {
-      var closeLogin = document.querySelector(".all");
+    showLog() {
+      var showLogin = document.querySelector(".logAll");
+      showLogin.style.display = "block";
+    },
+    closeLog() {
+      var closeLogin = document.querySelector(".logAll");
       closeLogin.style.display = "none";
     },
     login() {
@@ -64,11 +68,11 @@ export default {
           }
         })
         .then(response => {
-          console.log(response);
           if (response.data.code == 1) {
-            console.log(1);
+            alert("登录成功")
+            this.closeLog();
           } else {
-            console.log("-1");
+            alert("登录失败，用户名或密码错误！");
           }
         });
     }
@@ -78,6 +82,9 @@ export default {
 <style scoped>
 span {
   font-size: 14px;
+}
+.logAll {
+  display: none;
 }
 .reg {
   width: 350px;
