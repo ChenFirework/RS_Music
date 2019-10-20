@@ -201,7 +201,23 @@ export default {
       }
     },
     register() {
-      if (this.gender == "" || this.agree == false) {
+      if (this.agree == false) {
+        alert("请先同意相关服务条款和隐私政策");
+        return;
+      } else if (this.uname == "") {
+        alert("用户名不能为空！");
+        return;
+      } else if (this.upwd == "") {
+        alert("密码不能为空！");
+        return;
+      } else if (this.email == "") {
+        alert("邮箱不能为空！");
+        return;
+      } else if (this.phone == "") {
+        alert("手机号不能为空！");
+        return;
+      } else if (this.gender == "") {
+        alert("请选择性别");
         return;
       } else {
         var str =
@@ -216,10 +232,10 @@ export default {
           "&gender=" +
           this.gender;
         this.axios.post("register", str).then(response => {
-          if(response.data.code==200){
+          if (response.data.code == 200) {
             alert("注册成功!");
             this.closeReg();
-          }else{
+          } else {
             alert("此用户名已被注册！");
           }
         });
