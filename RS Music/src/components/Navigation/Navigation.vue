@@ -1,11 +1,6 @@
 <template>
   <div id="navigation">
-    <el-menu
-      :default-active="activeIndex"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-    >
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
       <el-menu-item index="1">首页</el-menu-item>
       <el-submenu index="2">
         <template slot="title">排行榜</template>
@@ -44,4 +39,13 @@ export default {
   display: flex;
   justify-content: center;
 }
+.el-menu--horizontal>.el-menu-item.is-active,
+.el-menu--horizontal>.el-menu-item,
+.el-menu.el-menu--horizontal{
+  border-bottom: 0;
+}
+.el-menu-item:hover{
+  color: aquamarine;
+}
+
 </style>
