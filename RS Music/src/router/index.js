@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation/Navigation.vue'
 import Ranking from '../components/Ranking/Ranking.vue'
 import Rank from '../components/Rank/Rank.vue'
 import Home from '../components/Home/Home.vue'
+import Header from '../components/Header/Header.vue'
 import Footer from '../components/Footer/Footer.vue'
 import Carousel from '../components/Carousel/Carousel.vue'
 import Songsheet from  '../components/Songsheet/Songsheet.vue'
@@ -55,6 +56,11 @@ export default new Router({
       path: '/footer',
       name: 'footer',
       component: Footer
+    },
+    {
+      path: '/header',
+      name: 'header',
+      component: Header
     },
     {
       path: '/carousel',

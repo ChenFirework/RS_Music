@@ -115,6 +115,7 @@ span {
 }
 .logo {
   width: 60px;
+  height: 60px;
 }
 .rs_title {
   font-size: 45px;

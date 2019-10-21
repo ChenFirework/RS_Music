@@ -2,7 +2,7 @@
   <div>
     <div class="toplist_bg">
       <div id="toplist" class="toplist">
-        <h2 class="title">排行榜</h2>
+        <h1 class="title">排行榜</h1>
         <ul class="lists">
           <li class="toplist_item" v-for="(item,i) in list" :key="i">
             <div class="ban">
@@ -95,7 +95,6 @@ export default {
   width: 200px;
   text-align: center;
   letter-spacing: 10px;
-  font-size: 1.7em;
   color: #323232;
 }
 .toplist .lists{
