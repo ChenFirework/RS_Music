@@ -2,7 +2,7 @@
 <div class="centent">
   <div class="container">
     <div class="mg">
-      <img src="../../../static/pg.jpg" alt="">
+      <img src="../../assets/pg.jpg" alt="">
     </div>
     <div class="lyric" >
       <ul id="lyric" style="text-align: center;">
@@ -41,15 +41,31 @@
       </ul>
     </div>
   </div>
-  <div class="footer">
-  <div class="btn_btn"><!--播放器-->
-      <el-button icon="Icon el-icon-d-arrow-left" circle title="上一首" style="font-size:10px;"></el-button>
-      <el-button icon="Icon el-icon-video-pause" circle title="播放"></el-button>
-      <el-button icon="Icon el-icon-d-arrow-right" circle title="下一首"></el-button>
+  <div class="play_music">
+  <div class="play_btn1"><!--播放器-->
+      <a href="#"><img src="../../assets/xiangqian.png" alt="" title="上一首"></a>
+      <a href="#"><img src="../../assets/zanting.png" alt="" title="暂停/播放"></a>
+      <a href="#"><img src="../../assets/xianghou.png" alt="" title="下一首"></a>
   </div>
-  <div class="play_music"><!--进度条-->
-  <a href="" title="说谎"></a>
+  <div class="play_btn2"><!--进度条最大div-->
+   <div class="play_pro"><!--进度条的盒子-->
+    <div class="play_aa"><!--进度条-->
+     <div class="music-pro">
+     </div>
+     <div class="music-cur">
+     </div>
+     <div class="music-dot">
+     </div>
+    </div>
+   </div>
   </div>
+  <div class="play_btn3"><!--循环-->
+    <a href="#"><img src="../../assets/1005.png" alt="" title="循环"></a>
+    <a href="#"><img src="../../assets/1003.png" alt="" title="喜欢"></a>
+    <a href="#"><img src="../../assets/1004.png" alt="" title="下载"></a>
+    <a href="#"><img src="../../assets/1004.png" alt="" title="评论"></a>
+  </div>
+ 
   <div><!--其他功能-->   
   </div>
   </div>
@@ -66,7 +82,7 @@
     },
   }
 </script>
-<style>
+<style scoped>
 *{
    margin: 0;
    padding: 0;
@@ -74,7 +90,11 @@
 .centent{
   width: 100%;
   height: 100%;
+  bottom: 0;
+  left: 0;
   position: absolute;
+  background:linear-gradient(45deg,rgba(241, 189, 111, 0.979),rgba(137, 236, 243, 0.952));
+  clear: both;
 }
 .container{
   width: 100%;
@@ -82,7 +102,7 @@
   margin-top:80px;
   position: relative;
 }
-.footer{
+.play_music{
   width: 100%;
   height: 100px;
   position: absolute;
@@ -101,7 +121,6 @@
   width:300px;
   position:absolute;
   margin-top: 0%;
-  
   display:inline-block;
   overflow: hidden;
 }
@@ -118,17 +137,93 @@ ul li{
   position: absolute;
 }
 .mg img{
-  width: 100%;
-  height: auto;
+width: 100%;
+height: auto;
+box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+ -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 }
-.play_music{
-  height: 50px;
+.play_btn1{/*暂停播放 */
+  width:250px;
   float: left;
+  height: 100%;
+  position: relative;
+  margin: 0 10px;
 }
-.btn_btn{
-  width:150px;
-  height:40px;
-  margin-top:30px;
-  margin-left: 100px;
+.play_btn1 a{
+   margin-left:24px;
+}
+.play_btn2{ /*进度条最大div */
+    float: left;
+    width: auto;
+    margin-left: 150px;
+    margin-right: 200px;
+    height: 100%;
+    position: relative;
+}
+ .play_pro{ /*进度条下div盒子*/
+    position: absolute;
+    height: 20px;
+    left: 10px;
+    right: 0;
+    top: 50%;
+    margin-top: -32px;
+} 
+.play_aa{
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+}
+.music-pro{ /*盒子里div事件 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 410px;
+    height: 2px;
+    margin-top: -1px;
+    border-radius: 2px;
+    background-color: #808284;
+    overflow: hidden;
+    margin:0 auto
+}
+.music-cur{
+      position: absolute;
+    background-color: #D8D8D8;
+    width: 0;
+    height: 2px;
+    top: 50%;
+    margin-top: -14px;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease
+}.music-dot{
+  width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -15px;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+}
+.play_btn3{/*循环点赞 */
+    float: right;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    position: relative;
+}
+.play_btn3 a{
+  margin-left:20px;
 }
 </style>

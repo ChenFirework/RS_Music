@@ -7,7 +7,9 @@
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
               <div class="img_div">
-                <img :src="item.url" alt />
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>
@@ -20,7 +22,9 @@
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
               <div class="img_div">
-                <img :src="item.url" alt />
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>
@@ -32,8 +36,10 @@
         <el-tab-pane label="KTV热歌" name="third">
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
-              <div class="img_div">
-                <img :src="item.url" alt />
+              <div class="img_div" >
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>
@@ -46,7 +52,9 @@
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
               <div class="img_div">
-                <img :src="item.url" alt />
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>
@@ -59,7 +67,9 @@
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
               <div class="img_div">
-                <img :src="item.url" alt />
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>
@@ -72,7 +82,9 @@
           <div class="allSheets">
             <div class="sheets" v-for="(item,i) in list" :key="i">
               <div class="img_div">
-                <img :src="item.url" alt />
+                <router-link :to="{ path: '/players'}">
+                  <img :src="item.url" alt />
+                </router-link>
               </div>
               <div class="a_div">
                 <a href="javascript:;">{{item.desc}}</a>

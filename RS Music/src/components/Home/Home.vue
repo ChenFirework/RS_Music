@@ -4,10 +4,9 @@
     <carousel></carousel>
     <singers></singers>
     <songsheet></songsheet>
-
     <newsong></newsong>
     <rank></rank>
-    
+    <footers></footers>
   </div>
 </template>
 <script>
@@ -17,6 +16,7 @@ import Rank from "../Rank/Rank.vue"
 import Newsong from "../Newsong/Newsong.vue"
 import Singers from "../Singers/Singers.vue"
 import Headers from "../Headers/Headers.vue"
+import Footers from "../Footers/Footers.vue"
 export default {
   data() {
     return {};
@@ -27,7 +27,8 @@ export default {
     songsheet:Songsheet,
     newsong:Newsong,
     singers:Singers,
-    headers:Headers
+    headers:Headers,
+    footers:Footers
   }
 };
 </script>
